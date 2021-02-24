@@ -14,7 +14,7 @@ function geraTokenHash(token) {
 }
 
 module.exports = {
-    adiciona: token => {
+    adiciona: async token => {
         const dataExpiracao = jwt.decode(token).exp;
         const tokenHash = geraTokenHash(token);
         await setAsync(tokenHash, '');
