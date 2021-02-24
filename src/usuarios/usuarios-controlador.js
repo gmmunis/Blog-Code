@@ -8,9 +8,8 @@ function criaTokenJWT(usuario) {
     id: usuario.id
   };
 
-  const token = jwt.sign(payload, process.env.CHAVE_JWT);
+  const token = jwt.sign(payload, process.env.CHAVE_JWT, { expiresIn: '15m' });
   return token;
-
 }
 
 module.exports = {
